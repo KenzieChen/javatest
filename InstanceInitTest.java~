@@ -1,0 +1,11 @@
+public class InstanceInitTest{
+	{a=6;}
+	int a =9;
+
+	public InstanceInitTest(){
+		System.out.println(a);
+	}
+	public static void main(String[] args){
+		InstanceInitTest iit =  new InstanceInitTest();
+	}
+}
