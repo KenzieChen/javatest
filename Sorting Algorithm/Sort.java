@@ -5,6 +5,7 @@ public class Sort{
 		//insertSort(arr);
 		//bubbleSort(arr);
 		//quickSort(arr);
+		shellSort(arr);
 		mergeSort(arr,0,arr.length-1);
 		System.out.println(Arrays.toString(arr));
 	}
@@ -93,6 +94,26 @@ public class Sort{
 			arr[m] = temp[index++];	
 		}
 		
+	}
+	public static void shellSort(int arr[]){
+		int length = arr.length;
+		int d = length/2;
+		while(d>0){
+			for(int k=0;k<d;k++){
+				for(int i=k+d;i<length;i=i+d){
+					int cur = arr[i];
+					int j=i-d;
+					while(j>=0 &&arr[j]>cur){
+						arr[j+d] =arr[j];
+						j=j-d;
+					}
+					arr[j+d] =cur;
+
+				}
+			}
+
+			d = d/2;
+		}
 	}
 
 
